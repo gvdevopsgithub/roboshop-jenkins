@@ -33,22 +33,30 @@
 //
 // }
 
-pipeline {
-  agent any
+// pipeline {
+//   agent any
+//
+//   environment {
+//     SAMPLE_URL="google.com"
+//   }
+//   stages {
+//
+//     stage ("One - ${SAMPLE_URL}") {
+//       steps {
+//         sh 'echo URL = ${SAMPLE_URL}'
+//         echo SAMPLE_URL
+//       }
+//     }
+//
+//   }
+// }
 
-  environment {
-    SAMPLE_URL="google.com"
-  }
-  stages {
-
-    stage ('One') {
-      steps {
-        sh 'echo URL = ${SAMPLE_URL}'
-        echo SAMPLE_URL
-      }
-    }
-
+env.SAMPLE_URL="google.com"
+node() {
+  stage ("One - $SAMPLE_URL}") {
+    echo SAMPLE_URL
   }
 }
+
 
 
