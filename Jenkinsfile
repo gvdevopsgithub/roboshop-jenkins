@@ -137,8 +137,8 @@ pipeline {
       }
     }
 
-    stage('Parellel Stages') {
-      Parellel {
+    stage('Parallel Stages') {
+      Parallel {
         stage('P1') {
           steps {
             sh 'sleep 120'
