@@ -139,17 +139,17 @@ pipeline {
 
       stage('Parellel Stages') {
         Parellel {
-          stage(P1) {
+          stage('P1') {
             steps {
               sh 'sleep 120'
             }
           }
-          stage(P2) {
+          stage('P2') {
             steps {
               sh 'sleep 120'
             }
           }
-          stage(P3) {
+          stage('P3') {
             steps {
               sh 'sleep 120'
             }
