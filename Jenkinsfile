@@ -1,21 +1,25 @@
-// pipeline {
-//   agent any
-//
-//   stages {
-//
-//     stage('TEST1') {
-//       steps {
-//         echo 'test1'
-//       }
-//     }
-//         stage('TEST2') {
-//        steps {
-//          echo 'test2'
-//          emailext body: 'TEST', subject: 'TEST', to: 'venky@local.com'
-//        }
-//      }
-//   }
-//
+pipeline {
+  agent any
+
+  stages {
+
+    stage('TEST1') {
+      steps {
+        echo 'test1'
+      }
+    }
+
+    stage('TEST2') {
+      steps {
+        echo 'test2'
+      }
+    }
+
+  }
+
+}
+
+
 //   post {
 //     fixed {
 //       echo "Hello"
@@ -121,40 +125,40 @@
 //
 // }
 
-
-pipeline {
-  agent any
-  stages {
-    stage('S1') {
-      steps {
-        echo 'S1'
-      }
-    }
-    stage('S2') {
-      steps {
-        echo 'S2'
-      }
-    }
-    stage('Parallel Stages') {
-      parallel {
-        stage('P1') {
-          steps {
-            sh 'sleep 120'
-          }
-        }
-        stage('P2') {
-          steps {
-            sh 'sleep 120'
-          }
-        }
-        stage('P3') {
-          steps {
-            sh 'sleep 120'
-          }
-        }
-      }
-    }
-  }
-}
+//
+// pipeline {
+//   agent any
+//   stages {
+//     stage('S1') {
+//       steps {
+//         echo 'S1'
+//       }
+//     }
+//     stage('S2') {
+//       steps {
+//         echo 'S2'
+//       }
+//     }
+//     stage('Parallel Stages') {
+//       parallel {
+//         stage('P1') {
+//           steps {
+//             sh 'sleep 120'
+//           }
+//         }
+//         stage('P2') {
+//           steps {
+//             sh 'sleep 120'
+//           }
+//         }
+//         stage('P3') {
+//           steps {
+//             sh 'sleep 120'
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 
 
