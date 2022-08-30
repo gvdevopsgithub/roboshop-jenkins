@@ -1,44 +1,60 @@
+// pipeline {
+//   agent any
+//
+//   stages {
+//
+//     stage('TEST1') {
+//       steps {
+//         echo 'test1'
+//       }
+//     }
+//
+//     stage('TEST2') {
+//       steps {
+//         echo 'test2'
+//         emailext body: 'TEST', subject: 'TEST', to: 'venky@local.com'
+//       }
+//     }
+//
+//   }
+//
+//   post {
+//     fixed {
+//       echo "Hello"
+//     }
+//     failure {
+//       echo "Failed State"
+//       emailext body: 'TEST', subject: 'TEST', to: 'venky@local.com'
+//     }
+//     cleanup {
+//       echo "Common steps"
+//     }
+//   }
+//
+// }
+
 pipeline {
   agent any
 
+  environment {
+    SAMPLE_URL="google.com"
+  }
   stages {
 
-    stage('TEST1') {
+    stage('one') {
       steps {
-        echo 'test1'
+        sh 'echo URL = ${SAMPLE_URL}'
+        echo SAMPLE_URL
       }
     }
 
-    stage('TEST2') {
-      steps {
-        echo 'test2'
-      }
-    }
-
-  }
-
-  post {
-    fixed {
-      echo "Hello"
-    }
-    failure {
-      echo "Failed State"
-    }
-    cleanup {
-      echo "Common steps"
-    }
   }
 
 }
 
-// pipeline {
-//   agent any
+//      SSH = credentials("SSH")
 //
-//   environment {
-//     SAMPLE_URL="google.com"
-//     SSH = credentials("SSH")
-//   }
-//
+
 //     parameters {
 //       string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 //
