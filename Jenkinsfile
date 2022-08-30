@@ -17,23 +17,19 @@ pipeline {
 
   }
 
+  post {
+    fixed {
+      echo "Hello"
+    }
+    failure {
+      echo "Failed State"
+    }
+    cleanup {
+      echo "Common steps"
+    }
+  }
+
 }
-
-
-//   post {
-//     fixed {
-//       echo "Hello"
-//     }
-//     failure {
-//       echo "Failed State"
-//       emailext body: 'TEST', subject: 'TEST', to: 'venky@local.com'
-//     }
-//     cleanup {
-//       echo "Common steps"
-//     }
-//   }
-//
-// }
 
 // pipeline {
 //   agent any
