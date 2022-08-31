@@ -98,53 +98,48 @@
 //   }
 // }
 
-pipeline {
-  agent any
-  tools {
-    maven 'maven'
-  }
-  stages {
-    stage('Maven Version') {
-      input {
-        message "Should we continue?"
-        ok "Yes, we should."
-        submitter "admin"
-        parameters {
-          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-        }
-      }
-      steps {
-        sh 'mvn --version'
-      }
-    }
-  }
-}
-
-
-// // pipeline {
+// pipeline {
 //   agent any
-//
+//   tools {
+//     maven 'maven'
+//   }
 //   stages {
-//     stage('one') {
-//       steps {
-//         echo 'ONE'
-//       }
-//     }
-//     stage('two') {
-//       when {
-//         expression {
-//           BRANCH_NAME == "master"
+//     stage('Maven Version') {
+//       input {
+//         message "Should we continue?"
+//         ok "Yes, we should."
+//         submitter "admin"
+//         parameters {
+//           string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 //         }
 //       }
 //       steps {
-//         echo 'TWO'
-//
+//         sh 'mvn --version'
 //       }
 //     }
 //   }
-//
-//
 // }
+
+pipeline {
+  agent any
+
+  stages {
+    stage('one') {
+      steps {
+        echo 'ONE'
+      }
+    }
+    stage('two') {
+      when {
+        BRANCH 'master'
+      }
+      steps {
+        echo 'TWO'
+      }
+    }
+  }
+
+}
 
 //
 // pipeline {
