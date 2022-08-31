@@ -131,7 +131,7 @@ pipeline {
     }
     stage('two') {
       when {
-        BRANCH 'master'
+        branch 'master'
       }
       steps {
         echo 'TWO'
