@@ -144,40 +144,59 @@
 // }
 
 
+// pipeline {
+//   agent any
+//   stages {
+//     stage('S1') {
+//       steps {
+//         echo 'S1'
+//       }
+//     }
+//     stage('S2') {
+//       steps {
+//         echo 'S2'
+//       }
+//     }
+//     stage('Parallel Stages') {
+//       parallel {
+//         stage('P1') {
+//           steps {
+//             sh 'sleep 120'
+//           }
+//         }
+//         stage('P2') {
+//           steps {
+//             sh 'sleep 120'
+//           }
+//         }
+//         stage('P3') {
+//           steps {
+//             sh 'sleep 120'
+//           }
+//         }
+//       }
+//     }
+//   }
+//
+// }
+//
+
 pipeline {
-  agent any
+  agent any 
+
   stages {
-    stage('S1') {
+
+    stage ('test1') {
       steps {
-        echo 'S1'
+        echo 'TEST'
       }
     }
-    stage('S2') {
+
+
+    stage ('test2') {
       steps {
-        echo 'S2'
-      }
-    }
-    stage('Parallel Stages') {
-      parallel {
-        stage('P1') {
-          steps {
-            sh 'sleep 120'
-          }
-        }
-        stage('P2') {
-          steps {
-            sh 'sleep 120'
-          }
-        }
-        stage('P3') {
-          steps {
-            sh 'sleep 120'
-          }
-        }
+        echo 'TEST2'
       }
     }
   }
-
 }
-
-
