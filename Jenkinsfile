@@ -132,8 +132,7 @@ pipeline {
     }
     stage('two') {
       when {
-        expression {
-          BRANCH_NAME 'master'
+        Branch 'master'
         }
       }
       steps {
