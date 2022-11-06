@@ -69,13 +69,13 @@ pipeline {
   }
 
 }
-
-env.SAMPLE_URL="google.com"
-node() {
-  stage("One - ${SAMPLE_URL}") {
-    echo SAMPLE_URL
-  }
-}
+//
+// env.SAMPLE_URL="google.com"
+// node() {
+//   stage("One - ${SAMPLE_URL}") {
+//     echo SAMPLE_URL
+//   }
+// }
 
 
 //     stage ("One") {
