@@ -133,8 +133,8 @@ pipeline {
     stage('two') {
       when {
         Branch 'master'
-        }
       }
+    }
       steps {
         echo 'TWO'
       }
