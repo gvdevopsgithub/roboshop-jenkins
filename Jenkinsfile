@@ -132,9 +132,10 @@ pipeline {
     }
     stage('two') {
       when {
-        Branch 'master'
+        expression {
+          BRANCH_NAME == "master"
+        }
       }
-    }
       steps {
         echo 'TWO'
       }
